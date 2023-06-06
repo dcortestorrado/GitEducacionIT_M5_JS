@@ -1,0 +1,59 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilos.css">
+  <title>Punto de Equilibrio</title>
+</head>
+<body>
+  <main class="container">
+
+    <div class="row mt-5 justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-8 p-3 contForm">
+
+        <h2 class="text-center fw-bold">Punto de Equilibrio</h2>
+        
+        <form id="peForm">
+          <div class="form-group">
+            <label for="costosFijos" class="fw-bold mt-3">Costos Fijos:</label>
+            <input type="number" class="form-control" id="costosFijos" min="0" step="0.01" value=0 required>
+          </div>
+          <div class="form-group">
+            <label for="precioVenta" class="fw-bold mt-4">Precio de Venta:</label>
+            <input type="number" class="form-control" id="precioVenta" min="0" step="0.01" value=0 required>
+          </div>
+          <div class="form-group">
+            <label for="costosVariables" class="fw-bold mt-4">Costos Variables:</label>
+            <input type="number" class="form-control" id="costosVariables" min="0" step="0.01" value=0 required>
+          </div>
+          <div id="errorEq" class="alert alert-danger mt-3 vhidden">La resta entre <span class="fw-bold">precio de venta</span> y <span class="fw-bold">costos variables</span> es igual a cero.</div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary mt-5 fw-bold me-5" onclick="calcularPE()">Calcular</button>
+            <button type="button" class="btn btn-primary mt-5 fw-bold" onclick="resetearEquilibrio()">Resetear</button>
+          </div>
+        </form>
+
+        <div class="form-group mt-4">
+          <label for="resultado" class="fw-bold mt-4">El punto de equilibrio es:</label>
+          <input type="text" class="form-control fw-bold" id="resultado" value=0 readonly>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="button" class="btn btn-primary mt-5 fw-bold" onclick="redireccionPresupuesto()">Presupuesto</button>
+      </div>
+    </div>
+
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+  
+</body>
+</html>
